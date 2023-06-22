@@ -1,0 +1,23 @@
+# ブラウザを開く
++open_browser_1:
+  action>: OpenBrowser
+  url: 'https://3xjkvv-3000.csb.app/'
+  lang: 'ja-JP'
+  headless: true
+  useShadowDomSelector: false
+  private: false
+
+# URL上のファイルを取得
++download_file_1:
+  action>: DownloadFile
+  url: 'https://i.pinimg.com/474x/d3/98/34/d39834ebbc54d89a27d3863ff4675377.jpg'
+  private: false
+
+# フォームでファイルを送信
++set_file_to_upload_1:
+  action>: SetFileToUpload
+  browser: +open_browser_1
+  selector: input
+  file: +download_file_1
+  ignoreError: true
+  private: false

@@ -1,0 +1,67 @@
+# ブラウザを開く
++open_browser_1:
+  action>: OpenBrowser
+  url: 'https://l85746.csb.app/'
+  lang: 'ja-JP'
+  userAgent: 'custom/non-standard'
+  headless: true
+  useShadowDomSelector: true
+  private: false
+
+# テキストを取得
++get_text_1:
+  action>: GetText
+  browser: +open_browser_1
+  selector: 'iframe[name="outer"] >> #target'
+  ignoreError: true
+  private: false
+
+# テキストを取得
++get_text_2:
+  action>: GetText
+  browser: +open_browser_1
+  selector: 'iframe[name="outer"] >> iframe[name="open"] >> #target'
+  ignoreError: true
+  private: false
+
+# テキストを取得
++get_text_3:
+  action>: GetText
+  browser: +open_browser_1
+  selector: 'iframe[name="outer"] >> iframe[name="open"] >> iframe[name="test"] >> #target'
+  ignoreError: true
+  private: false
+
+# テキストを取得
++get_text_4:
+  action>: GetText
+  browser: +open_browser_1
+  selector: 'iframe[name="outer"] >>> iframe[name="open"] >>> iframe[name="test"] >>> #target'
+  ignoreError: true
+  private: false
+
+# 文字入力
++type_text_1:
+  action>: TypeText
+  browser: +open_browser_1
+  selector: 'iframe[name="outer"] >> iframe[name="open"] >> iframe[name="test"] >> #target'
+  text: Hello
+  clearValue: false
+  ignoreError: true
+  private: false
+
+# テキストを取得
++get_text_6:
+  action>: GetText
+  browser: +open_browser_1
+  selector: 'iframe[name="cross-origin"] >> h1'
+  ignoreError: true
+  private: false
+
+# テキストを取得
++get_text_5:
+  action>: GetText
+  browser: +open_browser_1
+  selector: 'iframe[name="closed"] >> #target'
+  ignoreError: true
+  private: false
